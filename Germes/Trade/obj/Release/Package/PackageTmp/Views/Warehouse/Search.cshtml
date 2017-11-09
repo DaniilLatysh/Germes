@@ -1,0 +1,12 @@
+﻿
+
+<div class="search-product">
+    @using (Html.BeginForm("Search", "Warehouse", FormMethod.Post))
+    {
+        <p>
+            <input class="search-product-key" type="number" min="0" step="1" name="Key" placeholder="Key" />
+            <input class="search-product" type="text" name="query" placeholder="Search by model..." />
+            <input type="submit" value="Search" />
+        </p>
+    }
+</div>

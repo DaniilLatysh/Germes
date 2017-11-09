@@ -1,0 +1,64 @@
+﻿
+<h4>Price </h4>
+
+<div class="preview-table container" style='overflow-y:auto;'>
+
+    <table class="table table-bordered table-responsive table-hover">
+        <thead>
+            <tr>
+                <th>
+                    Key
+                </th>
+
+                <th>
+                    Product
+                </th>
+
+                <th>
+                    Warranty
+                </th>
+
+                <th>
+                    Quantity
+                </th>
+
+                <th>
+                    Price IN
+                </th>
+                <th>
+                    Delete
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @if (ViewBag.ListItems != null)
+            {
+
+                foreach (var item in ViewBag.ListItems)
+                {
+                    <tr>
+                        <td>
+                            @item.ProductKey
+                        </td>
+                        <td>
+                            @item.ProductName
+                        </td>
+                        <td>
+                            @item.Warranty
+                        </td>
+                        <td>
+                            @item.Quantity
+                        </td>
+                        <td>
+                            @item.PriceIn
+                        </td>
+                        <td>
+                            @Html.ActionLink("Delete", "Delete", new { id = item.PriceId })
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>

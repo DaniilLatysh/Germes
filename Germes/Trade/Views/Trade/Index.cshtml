@@ -1,0 +1,102 @@
+﻿@model IEnumerable<DataLayer.DAL.Entities.Order>
+
+@{
+    ViewBag.Title = "Trade";
+}
+
+@{
+    <div class="overlay">
+
+        <h4>TRADE</h4>
+        <hr />
+
+        <div class="table-trade ">
+            <div class="row">
+                @using (Html.BeginForm("SearchOrder", "Trade", FormMethod.Post, new { enctype = "multipart/form-data", onsubmit = "setDate()" }))
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="col-md-12 form-rows list-group">
+                        <div class="col-sm-1">
+                            <label class="control-label">Order ID</label>
+                            <input type="number" name="id" min="0" max="99999" step="1" value="0" class="form-control" />
+                        </div>
+                        <div class="col-md-3">
+                            <label class="control-label">Date create</label>
+                            <input type="date" name="date" id="date" class="form-control" />
+                        </div>
+                    </div>
+
+                    <div class="list-group col-md-11 form-rows">
+                        <div class="list-group-item ">
+                            <ul class="list-inline grid">
+                                <li class="col-md-2">
+                                    <p>
+                                        ID
+                                    </p>
+                                </li>
+                                <li class="col-md-3">
+                                    <p>
+                                        PRODUCTS
+                                    </p>
+                                </li>
+                                <li class="col-md-1">
+                                    <p>
+                                        PHONE
+                                    </p>
+                                </li>
+                                <li class="col-md-1">
+                                    <p>
+                                        ADRESS
+                                    </p>
+                                </li>
+                                <li class="col-md-1">
+                                    <p>
+                                        DESCRIPTION
+                                    </p>
+                                </li>
+                                <li class="col-md-1">
+                                    <p>
+                                        CREATED
+                                    </p>
+                                </li>
+                                <li class="col-md-1">
+                                    <p>
+                                        DELIVERY
+                                    </p>
+                                </li>
+                                <li class="col-md-1">
+                                    <p>
+                                        STATUS
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                        @foreach (var item in Model)
+                        {
+                            @Html.Partial("OrderViewPartial", item);
+                        }
+                    </div>
+                
+                <div class="list-group col-md-1 form-rows">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <a href="@Url.Action("Create", "Order")" class="btn btn-success" title="Create new order">CREATE</a>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <input type="submit" name="Filter" value="FILTER" class="form-control btn-warning" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+}
+
+
+<script src="~/Scripts/DateMaker.js"></script>

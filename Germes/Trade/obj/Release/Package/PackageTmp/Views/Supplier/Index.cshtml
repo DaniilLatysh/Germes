@@ -1,0 +1,22 @@
+﻿@model IEnumerable<DataLayer.DAL.Entities.Supplier>
+
+@{
+    ViewBag.Title = "Suppliers";
+}
+
+
+<div class="overlay">
+
+    <h4>SUPPLIER MANAGER</h4>
+    <hr />
+
+    <div class="col-md-2 form-rows">
+        <h4>Panel </h4>
+        <hr />
+        <a href="@Url.Action("CreateSupplier")" class="btn btn-default" > Add new </a>
+    </div>
+    <div class="col-md-10 form-rows">
+        @{ Html.RenderPartial("SupplierTable");}
+    </div>
+
+</div>

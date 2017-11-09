@@ -1,0 +1,16 @@
+﻿@model IEnumerable<Trade.Models.MenuItem>
+
+
+<nav id="menu" class="cbp-vimenu col-lg-1" role="navigation">
+    <h4 style="text-align:center; color: white; padding-top: 20px; padding-bottom: 40px;">GERMES</h4>
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li class="@item.Active">
+                <a href="@Url.Action(item.Action, item.Controller)" , title="@item.Name" class="menu-item">
+                    <img src="@item.imageUrl" />
+                </a>
+            </li>
+        }
+    </ul>
+</nav>

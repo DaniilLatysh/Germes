@@ -1,0 +1,120 @@
+﻿@model IEnumerable<DataLayer.DAL.Entities.Supplier>
+
+<h4>Suppliers </h4>
+
+<div class="preview-table container" style='overflow-y:auto;'>
+
+    <table class="table table-bordered table-responsive table-hover">
+        <thead>
+            <tr>
+                <th>
+                    ID
+                </th>
+
+                <th>
+                    Short
+                </th>
+
+                <th>
+                    Form
+                </th>
+
+                <th>
+                    Name
+                </th>
+
+                <th>
+                    RS
+                </th>
+
+                <th>
+                    UNP
+                </th>
+
+                <th>
+                    Legal Addres
+                </th>
+
+                <th>
+                    Physical Addres
+                </th>
+                <th>
+                    Bank Req
+                </th>
+                <th>
+                    Bank Addres
+                </th>
+                <th>
+                    Country
+                </th>
+                <th>
+                    Phone
+                </th>
+                <th>
+                    Email
+                </th>
+                <th>
+                    Edit
+                </th>
+                <th>
+                    Delete
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @item.SupplierID
+                </td>
+                <td>
+                    @item.ShortNameSupplier
+                </td>
+                <td>
+                    @item.FormOfBusiness
+                </td>
+                <td>
+                    @item.NameSupplier
+                </td>
+                <td>
+                    @item.RS
+                </td>
+                <td>
+                    @item.UNP
+                </td>
+                <td>
+                    @item.LegalAddress
+                </td>
+                <td>
+                    @item.PhysicalAddress
+                </td>
+                <td>
+                    @item.BankRequisites
+                </td>
+                <td>
+                    @item.BankAddress
+                </td>
+                <td>
+                    @item.Country
+                </td>
+                <td>
+                    @item.Phone
+                </td>
+                <td>
+                    @item.Email
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.SupplierID })
+                </td>
+                <td>
+                    @Html.ActionLink("Delete", "Delete", new { id = item.SupplierID })
+                </td>
+            </tr>
+            }
+
+        </tbody>
+    </table>
+</div>
+

@@ -1,0 +1,129 @@
+﻿@model Trade.Models.OrderViewModel
+
+
+<script type="text/javascript">
+    function elementViewer(id)
+    {
+        var row = document.getElementById("child-" + id);        
+        row.style.display = row.style.display == 'none' ? 'table-row' : 'none';
+    }
+</script>
+
+
+<div id="searchresult" class="result container" style='overflow-y:auto;'>
+
+    <table class="table table-bordered table-responsive table-hover">
+        <thead>
+            <tr>
+
+                <th>
+                    Id
+                </th>
+
+                <th>
+                    Product
+                </th>
+
+                <th>
+                    Warrianty
+                </th>
+
+                <th>
+                    Quantity
+                </th>
+
+                <td>
+                    Price SALE
+                </td>
+
+                <td>
+                    Price IN
+                </td>
+
+                <td style="width:30px;">
+                    Supplier
+                </td>
+                <td>
+                    Add
+                </td>
+            </tr>
+        </thead>
+
+        <tbody>
+            @if (Model != null)
+            {
+                foreach (var item in Model.Products)
+                {
+                    <tr id="@item.ProductID" class="product-main-row" onclick="elementViewer(@item.ProductID)">
+                        <td>
+                            @item.ProductID
+                        </td>
+
+                        <td style="text-align: left;">
+                            @item.ToString()
+                        </td>
+
+                        <td>
+                            @item.Warranty
+                        </td>
+
+                        <td>
+                            @item.Quantity
+                        </td>
+
+                        <td>
+                            @item.PriceSale
+                        </td>
+
+                        <td>
+                            @item.PriceIn
+                        </td>
+                        <td>
+                            @if (item.CurrentPrice != null)
+                            { @item.CurrentPrice.Supplier.ShortNameSupplier }
+                        </td>
+
+                        <td>
+                            <a href="@Url.Action("AddToCart", "Order", new { @OrderID = Model.Order.OrderID, @ProductID = item.ProductID })"> Add</a>
+                        </td>
+                    </tr>
+
+
+
+                    foreach (var itemPrice in item.Price)
+                    {
+                        <tr id="child-@item.ProductID" class="product-child-row">
+                            <td>
+                                @itemPrice.ProductKey
+                            </td>
+
+                            <td style="text-align: left;">
+                                @itemPrice.ProductName
+                            </td>
+
+                            <td>
+                                @itemPrice.Warranty
+                            </td>
+
+                            <td>
+                                @itemPrice.Quantity
+                            </td>
+
+                            <td>
+                                @itemPrice.PriceSale
+                            </td>
+
+                            <td>
+                                @itemPrice.PriceIn
+                            </td>
+
+                            <td>
+                                @itemPrice.Supplier.ShortNameSupplier
+                            </td>
+                        </tr>
+                    }
+                }
+            }
+        </tbody>
+    </table>
+</div>

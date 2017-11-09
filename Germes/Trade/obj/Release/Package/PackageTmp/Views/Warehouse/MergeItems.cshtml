@@ -1,0 +1,268 @@
+﻿@model Trade.Models.WarehouseViewModel
+
+@{
+    ViewBag.Title = "Merge";
+}
+
+<script src="~/Scripts/Scripts.js"></script>
+
+<div class="overlay warehouse">
+    <h4>MERGE</h4>
+    <hr />
+
+    <div class="panel-overlay form-rows">
+        <div class="col-lg-12 ">
+            @if (ViewBag.Error != null)
+            {
+                <div class="form-group">
+                    @Html.Label("Error: ", htmlAttributes: new { @class = "control-label col-lg-12" })
+                    <div class="has-error ">
+                        @Html.Raw(ViewBag.Error)
+                    </div>
+
+                </div>
+            }
+        </div>
+@using (Html.BeginForm("SearchMerge", "Warehouse", FormMethod.Post))
+{
+        <div class="col-lg-6 ">
+            <div class="search-product">
+            
+                    <p>
+                        <input class="search-product-key" type="number" min="0" step="1" name="Key" placeholder="Key" />
+                        <input class="search-product" type="text" name="queryMergeProduct" placeholder="Search by model..." />
+                        <input type="submit" value="Search" />
+                    </p>
+                
+            </div>
+        </div>
+
+
+        <div class="col-lg-6 ">
+            <div class="search-product">
+
+                    <p>
+                        <input class="search-product" type="text" name="queryMergePrice" placeholder="Search..." />
+                        <input type="submit" value="Search" />
+                    </p>
+                
+            </div>
+        </div>
+}
+    </div>
+
+
+
+    @using (Html.BeginForm("MergeItems", "Warehouse", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div class="col-lg-6 form-rows">
+            <div class="preview-table container" style='overflow-y:auto;'>
+                <table class="table table-bordered table-responsive table-hover">
+                    <thead>
+                        <tr>
+                            <th>
+                                Id
+                            </th>
+
+                            <th>
+                                Category
+                            </th>
+
+                            <th>
+                                Product
+                            </th>
+
+                            <th>
+                                Quantity
+                            </th>
+
+                            <th>
+                                Warrianty
+                            </th>
+
+                            <th>
+                                Price Sale
+                            </th>
+
+                            <th>
+                                Price In
+                            </th>
+                            <th>
+                                Supplier
+                            </th>
+
+                            <th>
+                                Select
+                            </th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @foreach (var item in Model.Products)
+                        {
+                            <tr id="@item.ProductID"class="product-main-row" onclick="elementViewer(@item.ProductID)">
+                                <td>
+                                    @item.ProductID
+                                </td>
+
+                                <td>
+                                    @item.Category.NameCayegory
+                                </td>
+
+                                <td>
+                                    @item.ToString()
+                                </td>
+
+                                <td>
+                                    @item.Quantity
+                                </td>
+
+                                <td>
+                                    @item.Warranty
+                                </td>
+
+                                <td>
+                                    @item.PriceSale
+                                </td>
+
+                                <td>
+                                    @item.PriceIn
+                                </td>
+
+
+                                <td>
+                                    @if (item.CurrentPrice != null)
+                                    { @item.CurrentPrice.Supplier.ShortNameSupplier }
+                                    else { <p> - </p> }
+
+                                </td>
+
+
+                                <td>
+                                    <input type="radio" name="radioProduct" value="@item.ProductID">
+                                </td>
+                            </tr>
+
+                            foreach (var itemPrice in item.Price)
+                                    {
+                                <tr id="child-@item.ProductID" class="product-child-row">
+                                    <td>
+                                        @itemPrice.ProductKey
+                                    </td>
+
+                                    <td> @itemPrice.Supplier.ShortNameSupplier </td>
+
+                                    <td>
+                                        @itemPrice.ProductName
+                                    </td>
+
+                                    <td>
+                                        @itemPrice.Quantity
+                                    </td>
+
+                                    <td>
+                                        @itemPrice.Warranty
+                                    </td>
+
+                                    <td>
+                                        @itemPrice.PriceSale
+                                    </td>
+
+                                    <td>
+                                        @itemPrice.PriceIn
+                                    </td>
+
+                                    <td>
+                                        @itemPrice.Supplier.ShortNameSupplier
+                                    </td>
+
+                                    <td>
+                                        <a href="@Url.Action("DeleteMerge", "Warehouse", new { @idProduct = item.ProductID, @idMerge = itemPrice.PriceId })" title="Remove item from product">Remove</a>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+            <div class="col-lg-6 form-rows">
+
+                <div class="preview-table container" style='overflow-y:auto;'>
+
+                    <table class="table table-bordered table-responsive table-hover">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Select
+                                </th>
+                                <th>
+                                    Key
+                                </th>
+
+                                <th>
+                                    Product
+                                </th>
+
+                                <th>
+                                    Warranty
+                                </th>
+
+                                <th>
+                                    Quantity
+                                </th>
+
+                                <th>
+                                    Price In
+                                </th>
+                                <th>
+                                    Supplier
+                                </th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            @foreach (var item in Model.Price)
+                            {
+
+                                <tr>
+                                    <td>
+                                        <input type="radio" name="radioPrice" value="@item.PriceId">
+                                    </td>
+                                    <td>
+                                        @item.ProductKey
+                                    </td>
+                                    <td>
+                                        @item.ProductName
+                                    </td>
+                                    <td>
+                                        @item.Warranty
+                                    </td>
+                                    <td>
+                                        @item.Quantity
+                                    </td>
+                                    <td>
+                                        @item.PriceIn
+                                    </td>
+                                    <th>
+                                        @item.Supplier.ShortNameSupplier
+                                    </th>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+            <div class="panel-overlay form-rows col-lg-12">
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Save" class="btn btn-success" />
+                    </div>
+                </div>
+            </div>
+    }
+</div>

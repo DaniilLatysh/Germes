@@ -1,0 +1,58 @@
+﻿@model DataLayer.DAL.Entities.Order
+
+<ul class="list-inline">
+
+    <li class="col-sm-12">
+        <a href="@Url.Action("Edit", "Order", new { id = Model.OrderID })" class="list-group-item @Model.Status.NameStatus" title=@Model.Status.NameStatus>
+            <ul class="list-inline grid">
+                <li> @Model.OrderID </li>
+                <li>
+                    <div>
+                        <ul class="product-list">
+                            @if (Model.Products.Count > 0)
+                            {
+                                foreach (var item in Model.Products)
+                                {
+                                    <li>@item.Product.ToString() </li>
+                                }
+                            }
+                            else
+                            {
+                                @Html.Display(" - ");
+                            }
+                        </ul>
+                    </div>
+                </li>
+                <li> @Model.Client.PhoneNumber</li>
+                <li> @Model.Client.Adress </li>
+                <li> @Model.Description </li>
+                <li> @Model.CreateOrder <br /> @Model.CloseOrder</li>
+                <li>
+                    @if (@Model.DeliveryTimeFrom.HasValue)
+                    {
+                        @Model.DeliveryTimeFrom.Value.Hour 
+                        <span>:</span> 
+                        @Model.DeliveryTimeFrom.Value.Minute
+                    }
+                    -
+                    @if (@Model.DeliveryTimeTo.HasValue)
+                    {
+                        @Model.DeliveryTimeTo.Value.Hour
+                        <span>:</span>
+                        @Model.DeliveryTimeTo.Value.Minute
+                    }
+                    <br />
+                    @if (@Model.DeliveryDate.HasValue)
+                    {
+                         @Model.DeliveryDate.Value.Day <span>/</span> @Model.DeliveryDate.Value.Month
+                    }
+                </li>
+                <li> @Model.Status.NameStatus </li>
+            </ul>
+        </a>
+    </li>
+
+
+
+
+</ul>

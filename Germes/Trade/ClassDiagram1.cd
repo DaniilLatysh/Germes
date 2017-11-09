@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Trade.Helpers.CurrencyMaker">
+    <Position X="6.75" Y="4.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Helpers\CurrencyMaker.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Trade.Controllers.AdminController">
+    <Position X="0.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\AdminController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Trade.Controllers.MenuController">
+    <Position X="0.5" Y="5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAQAAAAAAAAAAAAAAEABAAAAAA=</HashCode>
+      <FileName>Controllers\MenuController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Trade.Controllers.OrderController">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAABgAAAAAAAAAAEEABAAAMACAAkAAAAgACA=</HashCode>
+      <FileName>Controllers\OrderController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Trade.Controllers.PriceController">
+    <Position X="2.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAgAAAIAAAAAAgAAAEAACAAAAkAAAAAAAA=</HashCode>
+      <FileName>Controllers\PriceController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Trade.Controllers.SupplierController">
+    <Position X="4.25" Y="4.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAEAAAACAAMAAAAAAAA=</HashCode>
+      <FileName>Controllers\SupplierController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Trade.Controllers.TradeController">
+    <Position X="0.5" Y="2.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAhAAAAAAAAAAAAACEAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\TradeController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Trade.Controllers.WarehouseController">
+    <Position X="4.25" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAQIAAAAAAAgAAABAAAAAAAEBAEAgEAiAAkAAAAgAAA=</HashCode>
+      <FileName>Controllers\WarehouseController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Trade.Helpers.ProductPriceManager">
+    <Position X="6.75" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAgAAAQAAAAAAAABAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Helpers\ProductPriceManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Trade.Helpers.Search">
+    <Position X="6.75" Y="3" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAAAAAQAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Helpers\Search.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Trade.Models.Cart">
+    <Position X="0.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAgCAAAAAEAAAAAAAAEAA=</HashCode>
+      <FileName>Models\Cart.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Trade.Models.MenuItem">
+    <Position X="2.75" Y="9" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAAAAAAQAAAAAAAAgAAAAAAAAAEQ=</HashCode>
+      <FileName>Models\MenuItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Trade.Models.OrderViewModel">
+    <Position X="5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAEAAAAAAAAAEAAAAAAAAAAAAEAAAAAAABAAAAAQ=</HashCode>
+      <FileName>Models\OrderViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Trade.Models.PriceViewModel">
+    <Position X="0.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAQAAAIAAAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>Models\PriceViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Trade.Models.WarehouseViewModel">
+    <Position X="2.75" Y="11.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAQAAAAAAAAAAAAAAAAAAEAAAAEEAAAAAAAQ=</HashCode>
+      <FileName>Models\WarehouseViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Trade.NinjectDependencyResolver">
+    <Position X="5" Y="11.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAEI=</HashCode>
+      <FileName>Services\NinjectDependencyResolver.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Trade.BundleConfig">
+    <Position X="4.75" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\BundleConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Trade.FilterConfig">
+    <Position X="1.25" Y="18" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\FilterConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Trade.EmailService" BaseTypeListCollapsed="true">
+    <Position X="1.25" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\IdentityConfig.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Trade.SmsService" BaseTypeListCollapsed="true">
+    <Position X="3" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\IdentityConfig.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Trade.ApplicationUserManager">
+    <Position X="4" Y="14.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\IdentityConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Trade.ApplicationSignInManager">
+    <Position X="1.25" Y="14.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\IdentityConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Trade.App_Start.NinjectWebCommon">
+    <Position X="6.5" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAACAAAQACAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\NinjectWebCommon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Trade.RouteConfig">
+    <Position X="3" Y="18" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\RouteConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Trade.Startup">
+    <Position X="4.75" Y="18" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAgAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\Startup.Auth.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataLayer.DAL.Entities.CartItem">
+    <Position X="4" Y="19.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="DataLayer.DAL.Entities.Order">
+    <Position X="2.25" Y="19.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="DataLayer.DAL.Entities.Client">
+    <Position X="7.5" Y="23.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="DataLayer.DAL.Entities.Status">
+    <Position X="2.25" Y="23.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="DataLayer.DAL.Entities.Price">
+    <Position X="7.5" Y="19.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="DataLayer.DAL.Entities.Product">
+    <Position X="5.75" Y="19.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="DataLayer.DAL.Entities.Category">
+    <Position X="4" Y="22.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="DataLayer.DAL.Entities.Settings">
+    <Position X="9.25" Y="19.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="DataLayer.DAL.Entities.Supplier">
+    <Position X="0.5" Y="19.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="DataLayer.DAL.Context.DataContext">
+    <Position X="0.5" Y="26.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="DataLayer.DAL.UnitOfWork.UnitOfWork">
+    <Position X="2.25" Y="26.75" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DataLayer.DAL.Repositories.EFCartRepository">
+    <Position X="4" Y="26.75" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DataLayer.DAL.Repositories.EFCategoryRepository">
+    <Position X="5.75" Y="26.75" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DataLayer.DAL.Repositories.EFClientRepository" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="26.75" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DataLayer.DAL.Repositories.EFOrderRepository" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="26.75" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DataLayer.DAL.Repositories.EFPriceRepository" BaseTypeListCollapsed="true">
+    <Position X="4" Y="29.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DataLayer.DAL.Repositories.EFProductRepository" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="29.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DataLayer.DAL.Repositories.EFSettingRepository">
+    <Position X="0.5" Y="30.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="DataLayer.DAL.Repositories.EFStatusRepository" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="29.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DataLayer.DAL.Repositories.EFSupplierRepository" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="29.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="DataLayer.DAL.Interfaces.IRepository&lt;T&gt;">
+    <Position X="2.25" Y="30.5" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="DataLayer.DAL.Interfaces.IUnitOfWork">
+    <Position X="0.5" Y="32.5" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

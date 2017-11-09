@@ -1,0 +1,71 @@
+﻿@model Trade.Models.OrderViewModel
+
+
+
+<div id="cart" class="cart" style='overflow-y:auto;'>
+
+        <table class="table table-bordered table-responsive table-hover">
+            <thead>
+                <tr>
+
+                    <th style="width:50px;">
+                        Id
+                    </th>
+
+                    <th style="width:auto;">
+                        Product
+                    </th>
+                    <th style="width:20px;">
+                        Warrianty
+                    </th>
+                    <th style="width:20px;">
+                        Quantity
+                    </th>
+                    <td style="width:90px;">
+                        Price Sale
+                    </td>
+                    <td style="width:90px;">
+                        Price In
+                    </td>
+                    <td style="width:40px;">
+                        Remove
+                    </td>
+                </tr>
+            </thead>
+
+            <tbody>
+                @if (Model.Cart.Count() > 0)
+                {
+                    foreach (var item in Model.Cart)
+                    {
+                        <tr>
+                            <td>
+                                @item.Product.ProductID
+                            </td>
+
+                            <td style="text-align: left;">
+                                @item.Product.ToString()
+                            </td>
+                            <td>
+                                @item.Product.Warranty
+                            </td>
+                            <td>
+                                @item.Quantity
+                            </td>
+                            <td>
+                                @item.PriceSale
+                            </td>
+                            <td>
+                                @item.PriceIn
+                            </td>
+                            <td>
+                                <a href="@Url.Action("RemoveFromCart", "Order", new { @OrderID = Model.Order.OrderID, @ProductID = item.Product.ProductID })"> Remove</a>
+                            </td>
+                        </tr>
+
+                    }
+                }
+            </tbody>
+        </table>
+    
+</div>

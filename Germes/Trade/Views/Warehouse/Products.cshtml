@@ -1,0 +1,112 @@
+﻿@model Trade.Models.WarehouseViewModel
+
+
+<div class="preview-table container" style='overflow-y:auto;'>
+    <table class="table table-bordered table-responsive table-hover">
+        <thead>
+            <tr>
+
+                <th>
+                    Id
+                </th>
+
+                <th>
+                    Category
+                </th>
+
+                <th>
+                    Product
+                </th>
+
+                <th>
+                    Model
+                </th>
+
+                <th>
+                    Extended Model
+                </th>
+
+                <th>
+                    Description
+                </th>
+
+                <th>
+                    Color
+                </th>
+                <th>
+                    SALE
+                </th>
+                <th>
+                    IN
+                </th>
+                <th>
+                    Raiting
+                </th>
+                <th>
+                    Edit
+                </th>
+                <th>
+                    Delete
+                </th>
+
+            </tr>
+        </thead>
+
+        <tbody>
+            @if (Model.Products != null)
+            {
+                foreach (var item in Model.Products)
+                {
+                <tr>
+                    <td>
+                        @item.ProductID
+                    </td>
+
+                    <td>
+                        @item.Category.NameCayegory
+                    </td>
+
+                    <td>
+                        @item.Manufacturer
+                    </td>
+
+                    <td>
+                        @item.Model
+                    </td>
+
+                    <td>
+                        @item.ExtendedModel
+                    </td>
+
+                    <td>
+                        @item.Description
+                    </td>
+
+                    <td>
+                        @item.Color
+                    </td>
+
+                    <td>
+                        @item.PriceSale
+                    </td>
+
+                    <td>
+                        @item.PriceIn
+                    </td>
+
+                    <td>
+                        @item.Rating
+                    </td>
+
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.ProductID })
+                    </td>
+                    <td>
+                        @Html.ActionLink("Delete", "Delete", new { id = item.ProductID })
+                    </td>
+                </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>

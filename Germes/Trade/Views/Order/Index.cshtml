@@ -1,0 +1,58 @@
+﻿@model Trade.Models.OrderViewModel
+
+@{
+    ViewBag.Title = "Order";
+}
+
+<div class="overlay order">
+    <div class="col-md-2 category-list">
+        <div class="row">
+            <h4 class="list-group-item-heading">CATEGORY</h4>
+            <hr />
+            @foreach (var item in Model.Categories)
+            {
+                <a href="@Url.Action("Filter", "Order", new { idCategory = item.CategoryID, idOrder = Model.Order != null ? Model.Order.OrderID : 0 })" class="list-group-item">
+                    <ul class="list-inline">
+                        <li> @item.NameCayegory </li>
+                    </ul>
+                </a>
+            }
+        </div>
+
+        @if (ViewBag.Error != null)
+        {
+            <div class="has-error">
+                @Html.Raw(ViewBag.Error)
+            </div>
+        }
+    </div>
+
+    <div class="col-md-10">
+        @using (Ajax.BeginForm("Search", new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "result" }))
+        {
+            if (Model.Order != null)
+            {
+                @Html.Hidden("idOrder", Model.Order.OrderID);
+            }
+            <p>
+                <input class="search-product-key" type="number" min="0" step="1" name="key" placeholder="Key" />
+                <input class="search-product" type="text" name="request" placeholder="Search by model..." />
+                <input type="submit" value="Search" />
+            </p>
+
+        }
+
+        <div id="result" class="result">
+            @{ Html.RenderPartial("Search", Model);}
+        </div>
+
+        @if (Model.Order.OrderID > 0)
+        {
+            Html.RenderPartial("Edit", Model);
+        }
+        else
+        {
+            Html.RenderPartial("OrderFormPartialView", Model);
+        }
+    </div>
+</div>
